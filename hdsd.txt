@@ -1,31 +1,31 @@
-Đây là dự án mã nguồn mở do Buffa thực hiện, vui lòng không sử dụng nó cho bất kì mục đích lừa đảo nào !
+Ini adalah proyek sumber terbuka yang dibuat oleh Buffa, mohon jangan menggunakannya untuk tujuan penipuan apa pun!
 
-Các lệnh có trong BOT:
+Perintah yang termasuk dalam BOT:
 
-view - chạy view theo link tiktok
-list - xem các key hiện có (lệnh của admin)
-getkey - lấy key để kích hoạt plan
-gen [free/vip] - tạo key thường hoặc vip (lệnh của admin)
-plan - xem plan hiện tại 
-active - lệnh kích hoạt tài khoản
-clearkey - xoá các key hết hạn (botv2.py mới có)
+view - jalankan tampilan sesuai link tiktok
+daftar - melihat kunci yang ada (perintah admin)
+getkey - dapatkan kunci untuk mengaktifkan paket
+gen [gratis/vip] - buat kunci reguler atau vip (perintah admin)
+rencana - melihat rencana saat ini
+aktif - perintah aktivasi akun
+clearkey - hapus kunci yang kedaluwarsa (botv2.py baru)
 
-Các sửa đổi cần thiết để cấu hình bot:
+Modifikasi yang diperlukan untuk mengkonfigurasi bot:
 
-Thay đổi và thêm admin id, token bot ở dòng 12,13
-Chỉnh sửa link rút gọn để lấy key ở dòng 266
-Tải các thư viện cần thiết cho bot: pip install -r setup.txt
-Nếu xuất hiện lỗi: No module named "..." thì hãy dùng lệnh pip install ... 
-Nếu view không lên vui lòng chạy file view.py để kiểm tra lỗi vì đây là script chính để buff view
+Ubah dan tambahkan id admin, token bot di baris 12,13
+Edit tautan yang dipersingkat untuk mendapatkan kunci di baris 266
+Unduh perpustakaan yang diperlukan untuk bot: pip install -r setup.txt
+Jika muncul error : No module name "..." maka gunakan perintah pip install...
+Jika tampilan tidak muncul silahkan jalankan file view.py untuk mengecek error karena ini script utama untuk mem-buff tampilan
 
-Giải thích đôi chút về các PLAN và lệnh tạo KEY
-Plan FREE: Giới hạn chạy 500 views/1 lần và cần chờ 60s mỗi khi chạy lệnh tiếp theo
-PLAN VIP: Không có giới hạn gì cả
+Jelaskan sedikit tentang perintah pembuatan RENCANA dan KUNCI
+Paket GRATIS: Terbatas untuk menjalankan 500 tampilan/waktu dan perlu menunggu 60 detik setiap kali menjalankan perintah berikutnya
+RENCANA VIP: Tidak ada batasan sama sekali
 
-/gen free: tạo ngẫu nhiên 1 key FREE với hạn sử dụng 1 ngày
-/gen vip: tạo ngẫu nhiên 1 key VIP với hạn sử dụng 7 ngày
+/gen free: menghasilkan 1 kunci GRATIS secara acak dengan tanggal kedaluwarsa 1 hari
+/gen vip: menghasilkan 1 kunci VIP secara acak dengan masa berlaku 7 hari
 
-Mặc định khi /getkey sẽ được key FREE, nếu muốn key VIP cần liên hệ ADMIN
+Secara default, /getkey akan mendapatkan kunci GRATIS, jika Anda menginginkan kunci VIP, Anda perlu menghubungi ADMIN
 
 
-Chúc bạn sử dụng Bot vui vẻ ^_^
+Semoga Anda bersenang-senang menggunakan Bot ^_^
