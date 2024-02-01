@@ -122,7 +122,7 @@ def send(__device_id, __install_id, cdid, openudid):
             try:
                 if response.json()['status_code'] == 0:
                     _lock.acquire()
-                    print(Colorate.Horizontal(Colors.green_to_blue, f'TikTok Viewbot by BUFFA [ SUCCESS ]: {success}'))
+                    print(Colorate.Horizontal(Colors.green_to_blue, f'TikTok Viewbot by Revans505 [ SUCCESS ]: {success}'))
                     success += 1
                     _lock.release()
             except:
@@ -177,7 +177,7 @@ if __name__ == "__main__":
     os.system("cls" if os.name == "nt" else "clear")
     set_title("BOT VIEW")
     txt = """\n\n
-    TikTok Viewbot by @ongnoicuamay \n"""
+    TikTok Viewbot by @Revans505 \n"""
     print(
         Colorate.Vertical(
             Colors.DynamicMIX((Col.light_blue, Col.purple)), Center.XCenter(txt)
