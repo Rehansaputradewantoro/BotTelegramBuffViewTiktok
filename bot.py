@@ -1,5 +1,5 @@
-#SOURCE ĐƠN GIẢN, DỄ DÀNG PHÁT TRIỂN
-#COPYRIGHT BY BUFFA AKA VMT
+#SUMBERNYA SEDERHANA, MUDAH DIKEMBANGKAN
+#HAK CIPTA OLEH BUFFA AKA VMT
 import telepot
 from telepot.loop import MessageLoop
 import subprocess
@@ -135,12 +135,12 @@ def handle(msg):
 
     if command.startswith('/help'):
       message = (
-        "*Các Lệnh Hiện Có:*\n"
+        "*Pesanan Yang Ada:*\n"
         "┏━━━━━━━━━━━━━┓\n"
-        "┃ /view - Chạy view theo link Tiktok\n"
-        "┃ /getkey - Lấy KEY để kích hoạt Plan\n"
-        "┃ /plan - Xem plan hiện tại\n"
-        "┃ /active - Lệnh kích hoạt tài khoản\n"
+        "┃ /view - Jalankan tampilan sesuai link Tiktok\n"
+        "┃ /getkey - Dapatkan KUNCI untuk mengaktifkan Paket\n"
+        "┃ /plan - Lihat paket saat ini\n"
+        "┃ /active - Perintah aktivasi akun\n"
         "┗━━━━━━━━━━━━━┛"
       )
       bot.sendMessage(chat_id, message, parse_mode='Markdown')
@@ -152,9 +152,9 @@ def handle(msg):
           input_key = parts[1]
           key_type, expire_date = validate_and_remove_key(input_key)
           if key_type == "expired":
-              bot.sendMessage(chat_id, f'KEY này đã hết hạn !')
+              bot.sendMessage(chat_id, f'KEY Ini telah kedaluwarsa !')
           elif key_type:
-              bot.sendMessage(chat_id, f'KEY chính xác, đang cập nhật dữ liệu của bạn.')
+              bot.sendMessage(chat_id, f'KEY Benar, perbarui data Anda.')
               update_auth(user_id, expire_date, key_type)
               plan, expire = find_user_plan(user_id)
               time.sleep(2)
@@ -167,21 +167,21 @@ def handle(msg):
               )
               bot.sendMessage(chat_id, message)
           else:
-              bot.sendMessage(chat_id, 'KEY không tồn tại.')
+              bot.sendMessage(chat_id, 'KEY tidak ada.')
       else:
-          bot.sendMessage(chat_id, 'Vui lòng nhập KEY. Usage: /active [key]')
+          bot.sendMessage(chat_id, 'Silakan masuk. Usage: /active [key]')
 
 
     #LỆNH KIỂM TRA PLAN
     elif not is_user_authorized(user_id):
-        bot.sendMessage(chat_id, 'Bạn không có quyền sử dụng hoặc KEY của bạn đã hết hạn.')
+        bot.sendMessage(chat_id, 'Anda tidak mempunyai hak untuk menggunakannya atau KEY Anda telah kedaluwarsa.')
         return
 
 
     #LỆNH TẠO KEY CỦA ADMIN
     elif command in ['/gen free', '/gen vip']:
         if user_id not in admin_ids:
-            bot.sendMessage(chat_id, "Bạn không có quyền sử dụng lệnh này !")
+            bot.sendMessage(chat_id, "Anda tidak memiliki izin untuk menggunakan perintah ini !")
             return
         new_key = generate_random_key()
         plan_type = "free" if command == '/gen free' else "vip"
@@ -201,9 +201,9 @@ def handle(msg):
     #XỬ LÝ KHI LỆNH KHÔNG DÚNG CÚ PHÁP
     elif command.startswith('/gen'):
         if user_id not in admin_ids:
-            bot.sendMessage(chat_id, "Bạn không có quyền sử dụng lệnh này !")
+            bot.sendMessage(chat_id, "Anda tidak memiliki izin untuk menggunakan perintah ini !")
             return
-        bot.sendMessage(chat_id, "Cú pháp không chính xác. Sử dụng: /gen free hoặc /gen vip")
+        bot.sendMessage(chat_id, "Sintaks yang salah. Gunakan: /gen free atau /gen vip")
 
 
     #LỆNH XEM PLAN
@@ -225,13 +225,13 @@ def handle(msg):
     #LỆNH XEM LIST KEY CỦA ADMIN
     elif command == '/list':
         if user_id not in admin_ids:
-            bot.sendMessage(chat_id, "Bạn không có quyền sử dụng lệnh này !")
+            bot.sendMessage(chat_id, "Anda tidak punya rencana !")
             return
         try:
             with open('key.json', 'r') as file:
                 keys = json.load(file)
         except (FileNotFoundError, json.JSONDecodeError):
-            bot.sendMessage(chat_id, "Không có KEY nào đang tồn tại.")
+            bot.sendMessage(chat_id, "Tidak ada Key yang ada.")
             return
         message = "`Danh Sách Các KEY:`\n"
         for key, details in keys.items():
@@ -247,11 +247,11 @@ def handle(msg):
         args = command.split()
         plan, expire = find_user_plan(chat_id)
         if len(args) != 3:
-            bot.sendMessage(chat_id, 'Usage: /view <link> <số lượng>')
+            bot.sendMessage(chat_id, 'Usage: /view <link> <kuantitas>')
             return
         url, amount = args[1], args[2]
         if plan == "free" and int(amount) > 500:
-            bot.sendMessage(chat_id, "Giới hạn chạy view của plan Free là 500 views.")
+            bot.sendMessage(chat_id, "Batas penayangan paket Free adalah 500 penayangan.")
             return
 
         if plan == 'free':
@@ -259,7 +259,7 @@ def handle(msg):
                 time_passed = current_time - last_time_used[chat_id]
                 if time_passed < 60:
                     remaining_time = 60 - time_passed
-                    bot.sendMessage(chat_id, f"Bạn cần chờ thêm {int(remaining_time)} giây để tiếp tục sử dụng.")
+                    bot.sendMessage(chat_id, f"Anda perlu menunggu lebih lama {int(remaining_time)} detik untuk terus menggunakan.")
                     return
             last_time_used[chat_id] = current_time
 
@@ -272,10 +272,10 @@ def handle(msg):
             f'┏━━━━━━━━━━━━━┓\n'
             f'┣➤ UserID: {user_id}\n'
             f'┣➤ URL: {url}\n'
-            f'┣➤ SỐ LƯỢNG VIEW: {amount} views\n'
-            f'┣➤ TRẠNG THÁI: Thành Công\n'
-            f'┣➤ THỜI GIAN: {today}\n'
-            f'┣➤ ADMIN: Buffa aka VMT\n'
+            f'┣➤ KUANTITAS VIEW: {amount} views\n'
+            f'┣➤ STATUS: Kesuksesan\n'
+            f'┣➤ WAKTU: {today}\n'
+            f'┣➤ ADMIN: Revans505\n'
             f'┗━━━━━━━━━━━━━┛'
         )
         bot.sendMessage(chat_id, response_message)
@@ -293,9 +293,9 @@ def handle(msg):
             response = requests.get(url, allow_redirects=True)
             redirected_url = response.url
             message = (
-              "<b>Tạo KEY thành công !!!</b>\n"
-              f"Key của bạn là: <a href='{redirected_url}'>Bấm Vào Đây</a>\n"
-              "Sau khi lấy KEY thành công, hãy dùng lệnh /active [key bạn vừa lấy] để kích hoạt plan của bạn."
+              "<b>KEY berhasil dibuat !!!</b>\n"
+              f"Key Anda adalah: <a href='{redirected_url}'>klik disini</a>\n"
+              "Setelah berhasil mendapatkan KUNCI, gunakan perintah /active [key yang baru saja Anda peroleh] untuk mengaktifkan rencana Anda."
             )
             bot.sendMessage(chat_id, message, parse_mode='HTML')
         except requests.RequestException as e:
@@ -324,7 +324,7 @@ print(Fore.RED + '''
 
 
 ''' + Style.RESET_ALL)
-connection_message = f"Đã kết nối thành công tới {bot_name} (@{bot_username})"
+connection_message = f"Berhasil terhubung ke {bot_name} (@{bot_username})"
 border = "═" * (len(connection_message) + 4)
 print(Fore.LIGHTGREEN_EX + f"╔{border}╗\n║  {connection_message}  ║\n╚{border}╝" + Style.RESET_ALL)
 
