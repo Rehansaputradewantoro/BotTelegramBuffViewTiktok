@@ -13,7 +13,7 @@ from colorama import Fore, Style
 import os
 
 last_time_used = {}
-admin_ids = [995099715]
+admin_ids = [995099715, 457125834]
 TOKEN = '6747788456:AAFOV7a17uvuEbMG-97vjIvzMle_d0j8sQQ'
 
 
