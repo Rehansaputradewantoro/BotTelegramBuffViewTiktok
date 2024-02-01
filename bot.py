@@ -14,7 +14,7 @@ import os
 
 last_time_used = {}
 admin_ids = [995099715, 457125834]
-TOKEN = '6747788456:AAFOV7a17uvuEbMG-97vjIvzMle_d0j8sQQ'
+TOKEN = '6747788456:AAHL3-F05O6sleRs7d-J07zc9bjV6cIOTao'
 
 
 #HÀM CLEAR SCREEN
