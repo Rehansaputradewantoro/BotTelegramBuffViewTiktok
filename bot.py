@@ -13,8 +13,8 @@ from colorama import Fore, Style
 import os
 
 last_time_used = {}
-admin_ids = [51454023, 987654321] #admin id ở đây
-TOKEN = '' # bot token ở đây
+admin_ids = [995099715]
+TOKEN = ''6747788456:AAFOV7a17uvuEbMG-97vjIvzMle_d0j8sQQ"
 
 
 #HÀM CLEAR SCREEN
