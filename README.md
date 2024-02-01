@@ -1,44 +1,25 @@
 # BOT VIEW TIKTOK 
 
-Đây là dự án mã nguồn mở do Buffa thực hiện, vui lòng không sử dụng nó cho bất kì mục đích lừa đảo nào ! 
+Ini adalah proyek sumber terbuka yang dibuat oleh Buffa, mohon jangan menggunakannya untuk tujuan penipuan apa pun!
 
-## Thông Báo
-Đã update file botv2.py tương thích trong group chat, sử dụng như file bot.py nhưng sẽ tương thích tốt hơn
+Pemberitahuan
+Memperbarui file botv2.py agar kompatibel dalam obrolan grup, gunakan seperti file bot.py tetapi akan lebih kompatibel
 
-## Lưu ý
-Đọc kĩ hướng dẫn sử dụng trước khi dùng ( hdsd.txt ) <br>
-Mọi thắc mắc và báo lỗi xin vui lòng liên hệ: <br>
-Telegram: https://t.me/ongnoicuamay
+Catatan
+Baca panduan pengguna dengan seksama sebelum menggunakan ( hdsd.txt )
+Untuk pertanyaan atau laporan kesalahan apa pun, silakan hubungi:
+Telegram: https://t.me/Revans505
 
-### Cài đặt 
+Pengaturan
+Ikuti langkah-langkah berikut untuk menginstal BOT di server Anda:
 
-Hãy thực hiện những bước sau để cài đặt BOT trên máy chủ của bạn: 
-
-1. Tải Source Bot về máy của bạn: 
-
-```bash
-   git clone https://github.com/vominht/BotTelegramBuffViewTiktok/
-   ```
-2. Cài đặt 1 số thư viện cần thiết cho BOT: 
-```bash 
-cd BotTelegramBuffViewTiktok 
-``` 
-```bash 
-pip install -r requirements.txt 
-``` 
-```bash 
-sudo apt-get update 
-``` 
-```bash 
-sudo apt-get install screen 
-```
-```bash 
-pip install python-telegram-bot --upgrade
-``` 
-3. Tiến hành chạy BOT 
-```bash 
-python bot.py 
-``` 
-
-
-
+Unduh Source Bot ke perangkat Anda:
+1. git clone https://github.com/vominht/BotTelegramBuffViewTiktok/
+2. Instal beberapa perpustakaan yang diperlukan untuk BOT:
+cd BotTelegramBuffViewTiktok
+3.  instalasi pip -r persyaratan.txt
+4. sudo pembaruan apt-get
+5. sudo apt-get install layar
+6. pip instal python-telegram-bot --upgrade
+Jalankan BOT
+7. python bot.py
